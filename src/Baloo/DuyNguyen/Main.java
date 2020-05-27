@@ -19,6 +19,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 	    colorArray colors = new colorArray("Book1.xlsx");
+	    colors.printElements();
     }
 }
 
@@ -44,10 +45,7 @@ class colorArray implements Serializable
         size = colors.length;
         this.colors = new color[size + 2];
 
-        for(int i = 0; i < size; i++)
-        {
-            this.colors[i] = colors[i];
-        }
+        System.arraycopy(colors, 0, this.colors, 0, size);
     }
 
     //Last edited by C. Herbert 3/2/15
@@ -123,7 +121,6 @@ class colorArray implements Serializable
                     else{
                         data[i] = String.valueOf(Math.round(cell.getNumericCellValue()));
                         System.out.println(data[i]);
-                        System.out.println(i);
                         i++;
                     }
 
@@ -139,8 +136,15 @@ class colorArray implements Serializable
             e.printStackTrace();
         }
     }
+    public void printElements()
+    {
+        for(int i = 0; i < size; i++)
+        {
+            System.out.println(colors[i]);
+        }
+    }
 
-    class color implements Serializable
+    static class color implements Serializable
     {
         private String code;
         private int red;
