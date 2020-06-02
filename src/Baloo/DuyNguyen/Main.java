@@ -20,12 +20,16 @@ public class Main {
 
 	    colorArray colors = new colorArray("Book1.xlsx");
 	    colors.printElements();
+	    colors.convertHSB();
     }
 }
 
 class colorArray implements Serializable
 {
     private color[] colors;
+    private float[] hue;
+    private float[] sat;
+    private float[] brightness;
     private int size;
 
     public colorArray() {size = 0;}
@@ -115,18 +119,14 @@ class colorArray implements Serializable
                     if(cell.getCellTypeEnum() == CellType.STRING)
                     {
                         data[i] = cell.getStringCellValue();
-                        System.out.println(data[i]);
                         i++;
                     }
-                    else{
+                    else
+                    {
                         data[i] = String.valueOf(Math.round(cell.getNumericCellValue()));
-                        System.out.println(data[i]);
+//                        System.out.println(data[i]);
                         i++;
                     }
-
-//                    System.out.print(data[i]);
-//                    System.out.print(data[i].getClass());
-//                    System.out.println("");
                 }
                 color myColor = new color(data);
                 this.setElement(control, myColor);
@@ -144,6 +144,54 @@ class colorArray implements Serializable
         }
     }
 
+    public void convertHSB()
+    {
+        hue = new float[size];
+        sat = new float[size];
+        brightness = new float[size];
+
+        for(int i = 0; i < size; i++)
+        {
+            float[] hsb = Color.RGBtoHSB(colors[i].getRed(), colors[i].getGreen(), colors[i].getBlue(), null);
+            hue[i] = hsb[0];
+            sat[i] = hsb[1];
+            brightness[i] = hsb[2];
+//            System.out.println(hue[i]);
+//            System.out.println(sat[i]);
+//            System.out.println(brightness[i]);
+        }
+    }
+
+    static int partition(int[] array, 0, int size) {
+        int pivot = 0;
+
+        int counter = 0;
+        for (int i = 0; i < size; i++) {
+            if (array[i] < array[pivot]) {
+                int temp = array[counter];
+                array[counter] = array[i];
+                array[i] = temp;
+                counter++;
+            }
+        }
+        int temp = array[pivot];
+        array[pivot] = array[counter];
+        array[counter] = temp;
+
+        return counter;
+    }
+
+    public static void quickSort(int[] array, int begin, int end) {
+        if (end <= begin) return;
+        int pivot = partition(array, begin, end);
+        quickSort(array, begin, pivot-1);
+        quickSort(array, pivot+1, end);
+    }
+
+    public void sortHue()
+    {
+
+    }
     static class color implements Serializable
     {
         private String code;
