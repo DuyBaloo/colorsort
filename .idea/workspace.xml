@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75ea1679-b0ef-4e30-b3e9-78200c91a854" name="Default Changelist" comment="" />
+    <list default="true" id="75ea1679-b0ef-4e30-b3e9-78200c91a854" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ColorSort.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ColorSort.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ColorSort/Baloo/DuyNguyen/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ColorSort/Baloo/DuyNguyen/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ColorSort/Baloo/DuyNguyen/colorArray$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ColorSort/Baloo/DuyNguyen/colorArray$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ColorSort/Baloo/DuyNguyen/colorArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ColorSort/Baloo/DuyNguyen/colorArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Baloo/DuyNguyen/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baloo/DuyNguyen/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,29 +26,27 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Baloo.DuyNguyen.Main" />
       <module name="ColorSort" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -60,6 +66,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Project_Structure/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590599672997" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591145583800">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591145583800" />
+    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591137660844">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591137660844" />
     <state x="618" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1590689986685">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -72,26 +86,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590599869697" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591118395722">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="207" key="GridCell.Tab.0.bottom" timestamp="1591149842034">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591118395722" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590618071220" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591118395722">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591149842034" />
+    <state width="1877" height="207" key="GridCell.Tab.0.center" timestamp="1591149842033">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591118395722" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590618071220" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591118395722">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="207" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591149842033" />
+    <state width="1877" height="207" key="GridCell.Tab.0.left" timestamp="1591149842033">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591118395722" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590618071220" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591118395722">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="207" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591149842033" />
+    <state width="1877" height="207" key="GridCell.Tab.0.right" timestamp="1591149842033">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591118395722" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590618071220" />
+    <state width="1877" height="207" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591149842033" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1590618071221">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -108,10 +122,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590618071221" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1590599767667">
+    <state x="440" y="94" key="SettingsEditor" timestamp="1591146147948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590599767667" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591146147948" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1590695421572">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

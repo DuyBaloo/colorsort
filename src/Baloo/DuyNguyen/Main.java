@@ -1,9 +1,12 @@
 package Baloo.DuyNguyen;
 
 import java.io.*;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.util.*;
 import java.awt.Color;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -21,6 +24,13 @@ public class Main {
 	    colorArray colors = new colorArray("Book1.xlsx");
 	    colors.printElements();
 	    colors.convertHSB();
+	    colors.sortArray();
+	    colors.printElements();
+	    colors.convertHSB();
+	    colors.sortShade();
+	    colors.printElements();
+	    colors.convertHSB();
+	    colors.writeFile();
     }
 }
 
@@ -136,12 +146,15 @@ class colorArray implements Serializable
             e.printStackTrace();
         }
     }
+
     public void printElements()
     {
-        for(int i = 0; i < size; i++)
+        for(int i = 0; i < colors.length; i++)
         {
-            System.out.println(colors[i]);
+            System.out.println(i + ": " + colors[i]);
+
         }
+        System.out.println("Size: " + colors.length);
     }
 
     public void convertHSB()
@@ -156,42 +169,109 @@ class colorArray implements Serializable
             hue[i] = hsb[0];
             sat[i] = hsb[1];
             brightness[i] = hsb[2];
-//            System.out.println(hue[i]);
+            System.out.println("hue is: " + hue[i] + " " + "sat is: " + sat[i] + " " + "brightness is: " + brightness[i]);
 //            System.out.println(sat[i]);
 //            System.out.println(brightness[i]);
         }
     }
 
-    static int partition(int[] array, 0, int size) {
-        int pivot = 0;
-
-        int counter = 0;
-        for (int i = 0; i < size; i++) {
-            if (array[i] < array[pivot]) {
-                int temp = array[counter];
-                array[counter] = array[i];
-                array[i] = temp;
-                counter++;
+    public void sortArray()
+    {
+        boolean sorted = false;
+        float tempH;
+        color temp;
+        while(!sorted)
+        {
+            sorted = true;
+            for(int i = 0; i < colors.length - 1; i++)
+            {
+                if(hue[i] > hue[i + 1])
+                {
+                    temp = colors[i];
+                    colors[i] = colors[i + 1];
+                    colors[i + 1] = temp;
+                    tempH = hue[i];
+                    hue[i] = hue[i + 1];
+                    hue[i + 1] = tempH;
+                    sorted = false;
+                }
             }
         }
-        int temp = array[pivot];
-        array[pivot] = array[counter];
-        array[counter] = temp;
-
-        return counter;
     }
 
-    public static void quickSort(int[] array, int begin, int end) {
-        if (end <= begin) return;
-        int pivot = partition(array, begin, end);
-        quickSort(array, begin, pivot-1);
-        quickSort(array, pivot+1, end);
-    }
-
-    public void sortHue()
+    public void sortShade()
     {
-
+        boolean sorted = false;
+        float tempH, tempS;
+        color temp;
+        while(!sorted)
+        {
+            sorted = true;
+            for(int i = 0; i < colors.length - 1; i++)
+            {
+                if(hue[i] == hue[i + 1] && sat[i] > sat[i + 1])
+                {
+                    temp = colors[i];
+                    colors[i] = colors[i + 1];
+                    colors[i + 1] = temp;
+                    tempH = hue[i];
+                    hue[i] = hue[i + 1];
+                    hue[i + 1] = tempH;
+                    tempS = sat[i];
+                    sat[i] = sat[i + 1];
+                    sat[i + 1] = tempS;
+                    sorted = false;
+                }
+            }
+        }
     }
+
+    public void writeFile() {
+        //Create blank workbook
+        XSSFWorkbook workbook = new XSSFWorkbook();
+
+        //Create a blank sheet
+        XSSFSheet sheet = workbook.createSheet( "Sort Colors");
+
+
+        printElements();
+        Map<String, Object[]> data = new TreeMap<String, Object[]>();
+        data.put("1", new Object[] {"Code", "Red", "Green", "Blue"});
+        for(int i = 0; i < colors.length; i++)
+        {
+            data.put(String.valueOf(i + 2), new Object[]{colors[i].code, colors[i].red, colors[i].green, colors[i].blue});
+        }
+
+        Set<String> keyset = data.keySet();
+        int rownum = 0;
+        for(String key: keyset)
+        {
+            Row row = sheet.createRow(rownum++);
+            Object[] objArr = data.get(key);
+            int cellnum = 0;
+            for(Object obj: objArr)
+            {
+                Cell cell = row.createCell(cellnum++);
+                if(obj instanceof String)
+                    cell.setCellValue((String)obj);
+                else if(obj instanceof Integer)
+                    cell.setCellValue((Integer)obj);
+            }
+        }
+        try
+        {
+            //Write the workbook in file system
+            FileOutputStream out = new FileOutputStream(new File("UpdatedBook.xlsx"));
+            workbook.write(out);
+            out.close();
+            System.out.println("File written successfully on disk.");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     static class color implements Serializable
     {
         private String code;
