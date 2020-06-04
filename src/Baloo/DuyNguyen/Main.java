@@ -22,13 +22,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 	    colorArray colors = new colorArray("Book1.xlsx");
-	    colors.printElements();
 	    colors.convertHSB();
 	    colors.sortArray();
-	    colors.printElements();
 	    colors.convertHSB();
 	    colors.sortShade();
-	    colors.printElements();
 	    colors.convertHSB();
 	    colors.writeFile();
     }
@@ -169,7 +166,7 @@ class colorArray implements Serializable
             hue[i] = hsb[0];
             sat[i] = hsb[1];
             brightness[i] = hsb[2];
-            System.out.println("hue is: " + hue[i] + " " + "sat is: " + sat[i] + " " + "brightness is: " + brightness[i]);
+//            System.out.println("hue is: " + hue[i] + " " + "sat is: " + sat[i] + " " + "brightness is: " + brightness[i]);
 //            System.out.println(sat[i]);
 //            System.out.println(brightness[i]);
         }
@@ -233,18 +230,16 @@ class colorArray implements Serializable
         //Create a blank sheet
         XSSFSheet sheet = workbook.createSheet( "Sort Colors");
 
-
-        printElements();
-        Map<String, Object[]> data = new TreeMap<String, Object[]>();
-        data.put("1", new Object[] {"Code", "Red", "Green", "Blue"});
+        Map<Integer, Object[]> data = new TreeMap<Integer, Object[]>();
+        data.put(1, new Object[] {"Code", "Red", "Green", "Blue"});
         for(int i = 0; i < colors.length; i++)
         {
-            data.put(String.valueOf(i + 2), new Object[]{colors[i].code, colors[i].red, colors[i].green, colors[i].blue});
+            data.put(i + 2, new Object[]{colors[i].getCode(), colors[i].getRed(), colors[i].getGreen(), colors[i].getBlue()});
         }
+        Set<Integer> keyset = data.keySet();
 
-        Set<String> keyset = data.keySet();
         int rownum = 0;
-        for(String key: keyset)
+        for(Integer key: keyset)
         {
             Row row = sheet.createRow(rownum++);
             Object[] objArr = data.get(key);
